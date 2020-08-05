@@ -18,18 +18,21 @@ function getpref(selectCountry) {
             var date = cData.Countries[i].Date;
 
             //Display Data onto the Home page
-            // set the toolbar center item to show the page.data.title
-            var page = document.getElementById("first-template");
-            console.log(page);
-
-            // page.querySelector("#SingleTitle").innerHTML = name;
-            page.querySelector("#home-totalConfirmed").innerHTML = confirmed;
-            page.querySelector("#home-totalDeaths").innerHTML = deaths;
-            page.querySelector("#home-totalRecovered").innerHTML = recovered;
-            page.querySelector("#home-newConfirmed").innerHTML = newConfirmed;
-            page.querySelector("#home-newDeaths").innerHTML = newDeaths;
-            page.querySelector("#home-newRecovered").innerHTML = newRecovered;
-            page.querySelector("#home-date").innerHTML = date;
+            document.querySelector(
+              "#home-totalConfirmed"
+            ).innerHTML = confirmed;
+            document.querySelector("#home-totalDeaths").innerHTML = deaths;
+            document.querySelector(
+              "#home-totalRecovered"
+            ).innerHTML = recovered;
+            document.querySelector(
+              "#home-newConfirmed"
+            ).innerHTML = newConfirmed;
+            document.querySelector("#home-newDeaths").innerHTML = newDeaths;
+            document.querySelector(
+              "#home-newRecovered"
+            ).innerHTML = newRecovered;
+            document.querySelector("#home-date").innerHTML = date;
           }
         }
       }

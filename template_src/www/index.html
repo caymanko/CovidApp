@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
+    
     <ons-page id="main-page">
         <ons-toolbar>
             <div class="center">COVID-19 Tracker</div>
@@ -46,59 +46,62 @@
     <template id="first-template">
         <ons-page id="first-page">
                 <div class="content content-container">
-                 
-
                     <div class="btn-space">
-                        <ons-button class="btn-link" onclick="checkPref()">CHECK PREF</ons-button>
+                        <ons-button class="btn-link" onclick="checkPref()">Update Results</ons-button>
                     </div>
                     <div span id="msgSpace"></div>
+    
+
+                    <div class="center desc-card" style="padding-left: 10%;">
+                        <table>
+                        <tr> 
+                             <td class="table-hd">Total Confirmed: </td>
+                             <td>
+                            <p class="content" id="home-totalConfirmed"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                             <td class="table-hd">Total Deaths: </td>
+                             <td>
+                            <p class="content" id="home-totalDeaths"></p>
+                            </td>
+                            </tr>
+                        <tr>
+                             <td class="table-hd">Total Recovered: </td>
+                             <td>
+                            <p class="content" id="home-totalRecovered"></p>
+                            </td>
+                            </tr>
+                        <tr>
+                             <td class="table-hd">New Confirmed: </td>
+                             <td>
+                            <p class="content" id="home-newConfirmed"></p>
+                            </td>
+                            </tr>
+                       <tr>
+                         <td class="table-hd">New Deaths: </td>
+                         <td>
+                        <p class="content" id="home-newDeaths"></p>
+                        </td>
+                        </tr>
+                       <tr>
+                         <td class="table-hd">New Recovered: </td>
+                         <td>
+                        <p class="content" id="home-newRecovered"></p>
+                        </td>
+                        </tr>
+                        <tr>
+                             <td>
+                            <p class="content"  id="home-date"></p>
+                            </td>
+                        </tr>
+                        </table>
+                    </div>
+
+                
                 </div>
 
-                <div class="center desc-card" style="padding-left: 10%;">
-                    <table>
-                    <tr> 
-                         <td class="table-hd">Total Confirmed: </td>
-                         <td>
-                        <p class="content" id="home-totalConfirmed"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                         <td class="table-hd">Total Deaths: </td>
-                         <td>
-                        <p class="content" id="home-totalDeaths"></p>
-                        </td>
-                        </tr>
-                    <tr>
-                         <td class="table-hd">Total Recovered: </td>
-                         <td>
-                        <p class="content" id="home-totalRecovered"></p>
-                        </td>
-                        </tr>
-                    <tr>
-                         <td class="table-hd">New Confirmed: </td>
-                         <td>
-                        <p class="content" id="home-newConfirmed"></p>
-                        </td>
-                        </tr>
-                   <tr>
-                     <td class="table-hd">New Deaths: </td>
-                     <td>
-                    <p class="content" id="home-newDeaths"></p>
-                    </td>
-                    </tr>
-                   <tr>
-                     <td class="table-hd">New Recovered: </td>
-                     <td>
-                    <p class="content" id="home-newRecovered"></p>
-                    </td>
-                    </tr>
-                    <tr>
-                         <td>
-                        <p class="content" style="position:absolute; bottom: 20px;" id="date"></p>
-                        </td>
-                    </tr>
-                    </table>
-                </div>
+                
 
         </ons-page>
     </template>
@@ -260,9 +263,7 @@
 
     <script>
         // since we are using tabs we can just set the home button universally
-        document.querySelector('#home-button').onclick = function() {
-            window.location = './index.html';
-        };
+       
 
         document.addEventListener('init', function(event) {
             // get a reference to the element (page that fired the init event)
@@ -280,15 +281,31 @@
             var currPref = window.localStorage.getItem('userPref');
             
            
-            var selectCountry = JSON.parse(currPref).country;
+            
             
             
 
             if (currPref !== null) {
+                var selectCountry = JSON.parse(currPref).country;
                 firstPage.querySelector('#msgSpace').innerHTML = selectCountry;
                 getpref(selectCountry);
             } else {
                 firstPage.querySelector('#msgSpace').innerHTML = "No preferences in LocalStorage";
+                document.querySelector(
+              "#home-totalConfirmed"
+            ).innerHTML = "";
+            document.querySelector("#home-totalDeaths").innerHTML = "";
+            document.querySelector(
+              "#home-totalRecovered"
+            ).innerHTML = "";
+            document.querySelector(
+              "#home-newConfirmed"
+            ).innerHTML = "";
+            document.querySelector("#home-newDeaths").innerHTML = "";
+            document.querySelector(
+              "#home-newRecovered"
+            ).innerHTML = "";
+            document.querySelector("#home-date").innerHTML = "";
             }
         }
 
@@ -330,10 +347,10 @@
                 prefPage.querySelector('#country').value = currPrefObj.country;
 
 
-                for (let i = 0; i < currPrefObj.interests.length; i++) {
-                    prefPage.querySelector('#' + currPrefObj.interests[i].fieldId).checked =
-                        currPrefObj.interests[i].fieldVal;
-                }
+                // for (let i = 0; i < currPrefObj.interests.length; i++) {
+                //     prefPage.querySelector('#' + currPrefObj.interests[i].fieldId).checked =
+                //         currPrefObj.interests[i].fieldVal;
+                // }
 
             }
         }
