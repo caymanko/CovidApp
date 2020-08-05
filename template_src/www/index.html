@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
 
+
     <link rel="stylesheet" href="./lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="./lib/onsenui/css/onsen-css-components.min.css">
     <script src="./lib/onsenui/js/onsenui.min.js"></script>
@@ -60,14 +61,50 @@
             <div style="text-align: center;">
                 <h4 id="SingleContent"></h4>
             </div>
-            <div class="center" style="padding-left: 10%;">
-                <p class="content" id="totalConfirmed"></p>
-                <p class="content" id="totalDeaths"></p>
-                <p class="content" id="totalRecovered"></p>
-                <p class="content" id="newConfirmed"></p>
+            <div class="center desc-card" style="padding-left: 10%;">
+                <table>
+                <tr> 
+                     <td>Total Confirmed: </td>
+                     <td>
+                    <p class="content" id="totalConfirmed"></p>
+                    </td>
+                </tr>
+                <tr>
+                     <td>Total Deaths: </td>
+                     <td>
+                    <p class="content" id="totalDeaths"></p>
+                    </td>
+                    </tr>
+                <tr>
+                     <td>Total Recovered: </td>
+                     <td>
+                    <p class="content" id="totalRecovered"></p>
+                    </td>
+                    </tr>
+                <tr>
+                     <td>New Confirmed: </td>
+                     <td>
+                    <p class="content" id="newConfirmed"></p>
+                    </td>
+                    </tr>
+               <tr>
+                 <td>New Deaths: </td>
+                 <td>
                 <p class="content" id="newDeaths"></p>
+                </td>
+                </tr>
+               <tr>
+                 <td>New Recovered: </td>
+                 <td>
                 <p class="content" id="newRecovered"></p>
-                <p class="content" style="position:absolute; bottom: 20px;" id="date"></p>
+                </td>
+                </tr>
+                <tr>
+                     <td>
+                    <p class="content" style="position:absolute; bottom: 20px;" id="date"></p>
+                    </td>
+                </tr>
+                </table>
             </div>
 
 

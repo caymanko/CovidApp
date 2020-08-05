@@ -115,3 +115,16 @@
 .fore-day{
     font-weight: bold !important;    
 }
+
+/* Country Individual Page */
+
+.desc-card {
+    background: #eee;
+    border-radius: 5px;
+    border: #ddd;
+    padding: 15px;
+    margin: 15px;
+
+    color: #303030;
+
+}

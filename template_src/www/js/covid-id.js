@@ -19,15 +19,12 @@ function getapi(pIndex) {
 
       page.querySelector("#SingleTitle").innerHTML = name;
       page.querySelector("#totalConfirmed").innerHTML =
-        "Total Confirmed: " + confirmed;
-      page.querySelector("#totalDeaths").innerHTML = "Total Deaths: " + deaths;
-      page.querySelector("#totalRecovered").innerHTML =
-        "Total Recovered: " + recovered;
-      page.querySelector("#newConfirmed").innerHTML =
-        "New Confirmed: " + newConfirmed;
-      page.querySelector("#newDeaths").innerHTML = "New Deaths: " + newDeaths;
-      page.querySelector("#newRecovered").innerHTML =
-        "New Recovered: " + newRecovered;
+        confirmed;
+      page.querySelector("#totalDeaths").innerHTML = deaths;
+      page.querySelector("#totalRecovered").innerHTML = recovered;
+      page.querySelector("#newConfirmed").innerHTML = newConfirmed;
+      page.querySelector("#newDeaths").innerHTML =  newDeaths;
+      page.querySelector("#newRecovered").innerHTML = newRecovered;
       page.querySelector("#date").innerHTML = date;
     })
     .always(function () {
