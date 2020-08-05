@@ -62,6 +62,22 @@ body {
     margin: -115px 0px 0px -112px;
     /* offset vertical: half of image height and text area height */
     /* offset horizontal: half of text area width */
+    background: url(../img/logo.png) no-repeat center top;
+    /* 170px x 200px */
+    position: absolute;
+    /* position in the center of the screen */
+    left: 50%;
+    top: 40%;
+    height: 50px;
+    /* text area height */
+    width: 225px;
+    /* text area width */
+    text-align: center;
+    padding: 180px 0px 0px 0px;
+    /* image height is 200px (bottom 20px are overlapped with text) */
+    margin: -115px 0px 0px -112px;
+    /* offset vertical: half of image height and text area height */
+    /* offset horizontal: half of text area width */
 }
 
 
@@ -85,6 +101,36 @@ h1 {
     overflow: visible;
     padding: 0px;
     text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+}
+
+
+/* SPLASH SCREEN */
+
+#splash {
+    background: url(../img/masks.jpg) no-repeat center top;
+    color: #fff;
+}
+
+ons-button.button {
+    background: #9CC22C;
+}
+
+.back-button__label {
+    color: #9CC22C;
+}
+
+#ios-back-button-icon {
+    fill: #9CC22C;
+}
+
+.btn-primary {
+    color: #252525;
 }
 
 .event {
