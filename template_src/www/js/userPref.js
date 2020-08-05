@@ -1,7 +1,7 @@
 function getpref(selectCountry) {
   var apiURL = "https://api.covid19api.com/summary";
   var spinnerModal = document.querySelector("#spinner-modal");
-  spinnerModal.show();
+  //   spinnerModal.show();
   $.ajax(apiURL)
     .done(function(cData) {
       getValue(selectCountry);
@@ -18,19 +18,18 @@ function getpref(selectCountry) {
             var date = cData.Countries[i].Date;
 
             //Display Data onto the Home page
+            // set the toolbar center item to show the page.data.title
+            var page = document.getElementById("first-template");
+            console.log(page);
 
-            //   // set the toolbar center item to show the page.data.title
-            //   var page = document.getElementById("Detail");
-            //   page.querySelector("ons-toolbar .center").innerHTML = "COVID-19 Tracker";
-
-            //   page.querySelector("#SingleTitle").innerHTML = name;
-            //   page.querySelector("#totalConfirmed").innerHTML = confirmed;
-            //   page.querySelector("#totalDeaths").innerHTML = deaths;
-            //   page.querySelector("#totalRecovered").innerHTML = recovered;
-            //   page.querySelector("#newConfirmed").innerHTML = newConfirmed;
-            //   page.querySelector("#newDeaths").innerHTML = newDeaths;
-            //   page.querySelector("#newRecovered").innerHTML = newRecovered;
-            //   page.querySelector("#date").innerHTML = date;
+            // page.querySelector("#SingleTitle").innerHTML = name;
+            page.querySelector("#home-totalConfirmed").innerHTML = confirmed;
+            page.querySelector("#home-totalDeaths").innerHTML = deaths;
+            page.querySelector("#home-totalRecovered").innerHTML = recovered;
+            page.querySelector("#home-newConfirmed").innerHTML = newConfirmed;
+            page.querySelector("#home-newDeaths").innerHTML = newDeaths;
+            page.querySelector("#home-newRecovered").innerHTML = newRecovered;
+            page.querySelector("#home-date").innerHTML = date;
           }
         }
       }
