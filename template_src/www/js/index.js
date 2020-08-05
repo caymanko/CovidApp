@@ -56,7 +56,3 @@ document.addEventListener("init", function(event) {
     getapi(page.data.pIndex);
   }
 });
-
-function pushPage(pIndex) {
-  myNavigator.pushPage("Detail.html", { data: { pIndex: pIndex } });
-}

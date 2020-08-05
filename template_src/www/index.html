@@ -171,7 +171,34 @@
         <ons-page id="list">
             
 
-            <div style="margin-top: 5px; width: 100%; display: flex; justify-content: center;" class="center">
+           
+
+            <!-- TESTING -->
+            
+                <ons-toolbar>
+                  <div class="center">Modal</div>
+                </ons-toolbar>
+              
+                
+              
+                   <!-- MODAL -->
+              <ons-modal direction="up">
+                <p class="content" id="countryName"></p>
+                <p class="content" id="totalConfirmed"></p>                 
+                <p class="content" id="totalDeaths"></p>                  
+                <p class="content" id="totalRecovered"></p>                  
+                <p class="content" id="newConfirmed"></p>                  
+                <p class="content" id="newDeaths"></p>               
+                <p class="content" id="newRecovered"></p>              
+                <p class="content" style="position:absolute; bottom: 20px;" id="date"></p>  
+                <div style="text-align: center">                  
+                  <button onclick="hideModal();">Close</button>
+                </div>
+              </ons-modal>
+
+
+            <!-- Dont change under -->     
+              <div style="margin-top: 5px; width: 100%; display: flex; justify-content: center;" class="center">
 
             </div>
             </ons-toolbar>
@@ -182,72 +209,7 @@
         </ons-page>
     </template>
 
-    <template id="Detail.html">
-        <ons-page id="Detail">
-            <ons-toolbar>
-                <div class="left">
-                    <ons-back-button id="reset">home</ons-back-button>
-                </div>
-                <div class="center"></div>
-            </ons-toolbar>
-
-            <div style=" display:flex; justify-content: center; width: 100%; background-color: transparent;"><img
-                    style="width: 80%;" id="SingleImg"></div>
-            <div class="text-center">
-                <h1 id="SingleTitle"></h1>
-            </div>
-            <div style="text-align: center;">
-                <h4 id="SingleContent"></h4>
-            </div>
-            <div class="center desc-card" style="padding-left: 10%;">
-                <table>
-                <tr> 
-                     <td class="table-hd">Total Confirmed: </td>
-                     <td>
-                    <p class="content" id="totalConfirmed"></p>
-                    </td>
-                </tr>
-                <tr>
-                     <td class="table-hd">Total Deaths: </td>
-                     <td>
-                    <p class="content" id="totalDeaths"></p>
-                    </td>
-                    </tr>
-                <tr>
-                     <td class="table-hd">Total Recovered: </td>
-                     <td>
-                    <p class="content" id="totalRecovered"></p>
-                    </td>
-                    </tr>
-                <tr>
-                     <td class="table-hd">New Confirmed: </td>
-                     <td>
-                    <p class="content" id="newConfirmed"></p>
-                    </td>
-                    </tr>
-               <tr>
-                 <td class="table-hd">New Deaths: </td>
-                 <td>
-                <p class="content" id="newDeaths"></p>
-                </td>
-                </tr>
-               <tr>
-                 <td class="table-hd">New Recovered: </td>
-                 <td>
-                <p class="content" id="newRecovered"></p>
-                </td>
-                </tr>
-                <tr>
-                     <td>
-                    <p class="content" style="position:absolute; bottom: 20px;" id="date"></p>
-                    </td>
-                </tr>
-                </table>
-            </div>
-
-
-        </ons-page>
-    </template>
+    
 
     <ons-modal id="spinner-modal">
         <div style="margin: auto;">
@@ -255,8 +217,8 @@
         </div>
     </ons-modal>
 
-    <script type="text/javascript" src="js/covid-id.js"></script>
     <script type="text/javascript" src="js/userPref.js"></script>
+    <script type="text/javascript" src="js/listModal.js"></script>
     <script type="text/javascript" src="js/covid.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
@@ -354,6 +316,8 @@
 
             }
         }
+
+
     </script>
 </body>
 
