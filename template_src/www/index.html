@@ -26,16 +26,18 @@
         <ons-toolbar>
             <div class="center">COVID-19 Tracker</div>
             <div class="right">
-                <ons-toolbar-button id="home-button">
+                <!-- <ons-toolbar-button id="home-button">
                     <ons-icon icon="md-home"></ons-icon>
-                </ons-toolbar-button>
+                </ons-toolbar-button> -->
             </div>
         </ons-toolbar>
 
         <ons-tabbar swipeable position="bottom">
-            <ons-tab page="first-template" label="Notes" icon="md-book" active>
+            <ons-tab page="first-template" label="Home" icon="md-home" active>
             </ons-tab>
             <ons-tab page="pref-template" label="Preferences" icon="md-settings">
+            </ons-tab>
+            <ons-tab page="list-template" label="List" icon="md-book">
             </ons-tab>
         </ons-tabbar>
     </ons-page>
@@ -73,16 +75,10 @@
             
         </ons-page>
     </template>
-    <!-- <template id="home.html">
+    <template id="list-template">
 
-        <ons-page id="home">
-            <ons-toolbar>
-
-                <div class="center">
-                    COVID-19 Tracker
-                </div>
-
-            </ons-toolbar>
+        <ons-page id="list">
+            
 
             <div style="margin-top: 5px; width: 100%; display: flex; justify-content: center;" class="center">
 
@@ -93,7 +89,7 @@
 
 
         </ons-page>
-    </template> -->
+    </template>
 
     <template id="Detail.html">
         <ons-page id="Detail">
