@@ -61,6 +61,8 @@ body {
     }
 }
 
+
+
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -68,6 +70,19 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
+
+}
+
+/* SPLASH SCREEN */
+
+#splash {
+     background:url(../img/masks.jpg) no-repeat center top;
+     color: #fff;
+}
+
+
+.btn-primary {
+    color: #252525;
 }
 
 .event {
