@@ -80,6 +80,18 @@ h1 {
      color: #fff;
 }
 
+ons-button.button {
+    background: #9CC22C;
+}
+
+.back-button__label{
+    color: #9CC22C;
+
+}
+
+#ios-back-button-icon {
+    fill: #9CC22C;
+}
 
 .btn-primary {
     color: #252525;
