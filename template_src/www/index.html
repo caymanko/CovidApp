@@ -22,7 +22,58 @@
 
 <body>
     <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
-    <template id="home.html">
+    <ons-page id="main-page">
+        <ons-toolbar>
+            <div class="center">COVID-19 Tracker</div>
+            <div class="right">
+                <ons-toolbar-button id="home-button">
+                    <ons-icon icon="md-home"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-tabbar swipeable position="bottom">
+            <ons-tab page="first-template" label="Notes" icon="md-book" active>
+            </ons-tab>
+            <ons-tab page="pref-template" label="Preferences" icon="md-settings">
+            </ons-tab>
+        </ons-tabbar>
+    </ons-page>
+    <template id="first-template">
+        <ons-page id="first-page">
+                <div class="content content-container">
+                 
+
+                    <div class="btn-space">
+                        <ons-button class="btn-link" onclick="checkPref()">CHECK PREF</ons-button>
+                    </div>
+                    <div span id="msgSpace"></div>
+                </div>
+        </ons-page>
+    </template>
+    <template id="pref-template">
+        <ons-page id="pref-page">
+            
+            <div class="content content-container">
+                <h1>Preferences</h1>
+
+                <div class="form-group">
+                    <label for="country">Type A Country</label>
+                    <div><ons-input input-id="country" class="form-field-full" modifier="underbar"></ons-input></div>
+                </div>
+
+                
+
+                <div class="btn-space">
+                    <ons-button class="btn-link" onclick="savePref()">UPDATE</ons-button>
+                    <ons-button class="btn-link" onclick="clearPref()">CLEAR</ons-button>
+                </div>
+            </div>
+
+            
+        </ons-page>
+    </template>
+    <!-- <template id="home.html">
 
         <ons-page id="home">
             <ons-toolbar>
@@ -42,7 +93,7 @@
 
 
         </ons-page>
-    </template>
+    </template> -->
 
     <template id="Detail.html">
         <ons-page id="Detail">
@@ -121,6 +172,81 @@
     <script type="text/javascript" src="js/covid.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
+
+    <script>
+        // since we are using tabs we can just set the home button universally
+        document.querySelector('#home-button').onclick = function() {
+            window.location = './index.html';
+        };
+
+        document.addEventListener('init', function(event) {
+            // get a reference to the element (page that fired the init event)
+            var page = event.target;
+
+            if (page.id === 'pref-page') {
+                setPrefFields();
+            }
+
+        });
+
+        function checkPref() {
+
+            var firstPage = document.getElementById('first-page');
+            var currPref = window.localStorage.getItem('userPref');
+
+            if (currPref !== null) {
+                firstPage.querySelector('#msgSpace').innerHTML = currPref;
+            } else {
+                firstPage.querySelector('#msgSpace').innerHTML = "No preferences in LocalStorage";
+            }
+        }
+
+        function savePref() {
+            var prefPage = document.getElementById('pref-page');
+
+            var currPref = {
+                country: prefPage.querySelector('#country').value
+            };
+
+            // iterate over interests
+            var interestSwitches = prefPage.querySelectorAll('.int-switch');
+            for (let i = 0; i < interestSwitches.length; i++) {
+
+                currPref.interests.push({
+                    fieldId: interestSwitches[i].getAttribute('input-id'),
+                    fieldVal: interestSwitches[i].checked
+                });
+            }
+
+            window.localStorage.setItem('userPref', JSON.stringify(currPref));
+        }
+
+        function clearPref() {
+            window.localStorage.removeItem('userPref');
+        }
+
+        function setPrefFields() {
+            // get the stored values if they exist                
+            var currPrefObj = window.localStorage.getItem('userPref');
+
+            if (currPrefObj !== null) {
+                // since we want them as an object we will parse
+                currPrefObj = JSON.parse(currPrefObj);
+
+                var prefPage = document.getElementById('pref-page');
+
+                // normally we'd set defaults for null values here but we'll keep it simple
+                prefPage.querySelector('#country').value = currPrefObj.country;
+
+
+                for (let i = 0; i < currPrefObj.interests.length; i++) {
+                    prefPage.querySelector('#' + currPrefObj.interests[i].fieldId).checked =
+                        currPrefObj.interests[i].fieldVal;
+                }
+
+            }
+        }
+    </script>
 </body>
 
 </html>
