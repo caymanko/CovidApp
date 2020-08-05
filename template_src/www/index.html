@@ -178,6 +178,7 @@
     </ons-modal>
 
     <script type="text/javascript" src="js/covid-id.js"></script>
+    <script type="text/javascript" src="js/userPref.js"></script>
     <script type="text/javascript" src="js/covid.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
@@ -204,11 +205,13 @@
             var currPref = window.localStorage.getItem('userPref');
             
            
-            var selectedCountry = JSON.parse(currPref);
+            var selectCountry = JSON.parse(currPref).country;
+            
             
 
             if (currPref !== null) {
-                firstPage.querySelector('#msgSpace').innerHTML = selectedCountry.country;
+                firstPage.querySelector('#msgSpace').innerHTML = selectCountry;
+                getpref(selectCountry);
             } else {
                 firstPage.querySelector('#msgSpace').innerHTML = "No preferences in LocalStorage";
             }
