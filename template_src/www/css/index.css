@@ -108,6 +108,12 @@ h1 {
 
 /* Country Individual Pages ======================== */
 
+
+td {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
 .desc-card {
     background: #eee;
     border-radius: 5px;
@@ -115,5 +121,10 @@ h1 {
     padding: 15px;
     margin: 15px;
     color: #303030;
+}
+
+.table-hd {
+    font-weight: 700;
+
 
 }
