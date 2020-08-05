@@ -189,9 +189,13 @@
 
             var firstPage = document.getElementById('first-page');
             var currPref = window.localStorage.getItem('userPref');
+            
+           
+            var selectedCountry = JSON.parse(currPref);
+            
 
             if (currPref !== null) {
-                firstPage.querySelector('#msgSpace').innerHTML = currPref;
+                firstPage.querySelector('#msgSpace').innerHTML = selectedCountry.country;
             } else {
                 firstPage.querySelector('#msgSpace').innerHTML = "No preferences in LocalStorage";
             }
