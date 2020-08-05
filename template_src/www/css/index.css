@@ -100,3 +100,37 @@ h1 {
 ons-button.button {
     background: #9CC22C;
 }
+
+/* PREVENTION */
+
+.prevention-card {
+    background: #fff;
+    border-radius: 5px;
+    margin:15px;
+    padding: 20px;
+
+    color: #252525;
+}
+
+tr {
+    margin-top: 20px;
+    height: 150px;
+    padding: 5px;
+}
+
+tr.h2 {
+    font-size:16px;
+}
+.prevention-text {
+    font-size: 12px;
+    text-transform: none;
+}
+
+.prevention-row {
+    border-bottom: 1px solid #ccc;
+}
+
+
+.covid-svg {
+    width: 80%;
+}
