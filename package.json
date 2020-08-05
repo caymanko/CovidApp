@@ -1,0 +1,14 @@
+{
+  "name": "assignment-2-christian-template",
+  "version": "1.0.0",
+  "description": "An example template for a covid-19 tracker.",
+  "repository": "",
+  "bugs": "",
+  "main": "index.js",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova:template"
+  ],
+  "author": "Christian Hombrebueno",
+  "license": "Apache-2.0"
+}

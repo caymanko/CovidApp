@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <link rel="stylesheet" href="./lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="./lib/onsenui/css/onsen-css-components.min.css">
+    <script src="./lib/onsenui/js/onsenui.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>COVID-19 Tracker</title>
+</head>
+
+<body>
+    <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
+    <template id="home.html">
+
+        <ons-page id="home">
+            <ons-toolbar>
+
+                <div class="center">
+                    COVID-19 Tracker
+                </div>
+
+            </ons-toolbar>
+
+            <div style="margin-top: 5px; width: 100%; display: flex; justify-content: center;" class="center">
+
+            </div>
+            </ons-toolbar>
+            <ons-list id="web-list-node">
+            </ons-list>
+
+
+        </ons-page>
+    </template>
+
+    <template id="Detail.html">
+        <ons-page id="Detail">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button id="reset">home</ons-back-button>
+                </div>
+                <div class="center"></div>
+            </ons-toolbar>
+
+            <div style=" display:flex; justify-content: center; width: 100%; background-color: transparent;"><img
+                    style="width: 80%;" id="SingleImg"></div>
+            <div class="text-center">
+                <h1 id="SingleTitle"></h1>
+            </div>
+            <div style="text-align: center;">
+                <h4 id="SingleContent"></h4>
+            </div>
+            <div class="center" style="padding-left: 10%;">
+                <p class="content" id="totalConfirmed"></p>
+                <p class="content" id="totalDeaths"></p>
+                <p class="content" id="totalRecovered"></p>
+                <p class="content" id="newConfirmed"></p>
+                <p class="content" id="newDeaths"></p>
+                <p class="content" id="newRecovered"></p>
+                <p class="content" style="position:absolute; bottom: 20px;" id="date"></p>
+            </div>
+
+
+        </ons-page>
+    </template>
+
+    <ons-modal id="spinner-modal">
+        <div style="margin: auto;">
+            <ons-icon icon="md-spinner" size="100px" spin></ons-icon>
+        </div>
+    </ons-modal>
+
+    <script type="text/javascript" src="js/covid-id.js"></script>
+    <script type="text/javascript" src="js/covid.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+</body>
+
+</html>
