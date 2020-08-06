@@ -95,11 +95,21 @@ h1 {
     color: #fff;
 }
 
+/* BUTTONS */
+
 ons-button.button {
     background: #9CC22C;
 }
 
-
+.btn-primary {
+    background-color: #9CC22C;
+    padding: 10px 15px;
+    border-radius: 16px;
+    border:none;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
 /* PREVENTION */
 
 .prevention-card {
@@ -287,3 +297,33 @@ body {
     font-size: 28px;
     font-weight: 900;
 }
+=======
+/* MODAL */
+
+.modal-container {
+  background: #eee;
+  color: #252525;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  margin: 20px;
+
+  border-radius: 5px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+
+.h2-border {
+    border-bottom: 1px solid #9CC22C;
+}
+
+.modal-head {
+    font-weight: 700;
+
+}
+
+.modal > p {
+  font-size:16px;
+}
+

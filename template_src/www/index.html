@@ -224,6 +224,29 @@
 
             <div style="margin-top: 5px; width: 100%; display: flex; justify-content: center;" class="center">
 
+        
+                   <!-- MODAL -->
+              <ons-modal  direction="up">
+            <div class="modal-container">
+                <p class="content" id="countryName"></p>
+                <p class="content" id="totalConfirmed"></p>                 
+                <p class="content" id="totalDeaths"></p>                  
+                <p class="content" id="totalRecovered"></p>                  
+                <p class="content" id="newConfirmed"></p>                  
+                <p class="content" id="newDeaths"></p>               
+                <p class="content" id="newRecovered"></p>              
+                <p class="content" style="position:absolute; bottom: 20px;" id="date"></p>  
+                <div style="text-align: center">                  
+                  <button onclick="hideModal();" icon="md-close" class="btn-primary">Close</button>
+                </div>
+            </div>
+              </ons-modal>
+
+
+            <!-- Dont change under -->     
+              <div style="margin-top: 5px; width: 100%; display: flex; justify-content: center;" class="center">
+
+
             </div>
             </ons-toolbar>
             <ons-list id="web-list-node">
