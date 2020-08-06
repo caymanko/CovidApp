@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    
+
     <ons-page id="main-page">
         <ons-toolbar>
             <div class="center">COVID-19 Tracker</div>
@@ -46,13 +46,64 @@
     <template id="first-template">
         <ons-page id="first-page">
                 <div class="content content-container">
-                    <div class="btn-space">
+                   
+                    <div span id="msgSpace">COUNTRY</div>
+                    
+                    <div class="container">
+                        
+                        <!-- <h1 id="msgSpace">Todo List</h1> -->
+                
+                        <div class="todo__container">
+                
+                
+                
+                
+                            <div class="todomain todo--finished">
+                               
+                                <h2 class="todo__amount content" id="home-totalConfirmed">0</h2>
+                                <p class="todo__link">Total Confirmed</p>
+                            </div>
+
+                            <div class="todo todo--finished">
+                                <h2 class="todo__amount" id="home-totalDeaths">0</h2>
+                                <p class="todo__link">Total Deaths</p>
+                            </div>
+
+                            <div class="todo todo--finished">
+                                <h2 class="todo__amount" id="home-newDeaths">0</h2>
+                                <p class="todo__link">New Deaths</p>
+                            </div>
+
+                            <div class="todo todo--finished">
+                                <h2 class="todo__amount" id="home-newConfirmed">0</h2>
+                                <p class="todo__link">New Confirmed</p>
+                            </div>
+
+                            <div class="todosec todo--finished">
+                                <h2 class="todo__amount"id="home-totalRecovered" >0</h2>
+                                <p class="todo__link">Total Recovered</p>
+                            </div>
+                            <div class="todosec todo--finished">
+                                <h2 class="todo__amount"id="home-newRecovered" >0</h2>
+                                <p class="todo__link">New <br>Recovered</p>
+                            </div>
+                            <!-- <div class="todomain todo--finished">
+                                <h2 class="todo__amount"id="home-date" >0</h2>
+                                <p class="todo__link">New Recovered</p>
+                            </div> -->
+                            
+                            
+                        </div>
+                        
+                
+                    </div>
+                    <div class="btn-space" style="margin-top:25px; display: flex;  margin: auto;
+                    width: 50%; margin-top: 20px;">
                         <ons-button class="btn-link" onclick="checkPref()">Update Results</ons-button>
                     </div>
-                    <div span id="msgSpace"></div>
     
 
-                    <div class="center desc-card" style="padding-left: 10%;">
+                    <!-- <div class="center desc-card" style="padding-left: 10%;">
                         <table>
                         <tr> 
                              <td class="table-hd">Total Confirmed: </td>
@@ -96,7 +147,7 @@
                             </td>
                         </tr>
                         </table>
-                    </div>
+                    </div> -->
 
                 
                 </div>
@@ -106,8 +157,8 @@
         </ons-page>
     </template>
 
-<!--  PREVENTION TEMPLATE  -->
-     <template id="prevention-template">
+    <!--  PREVENTION TEMPLATE  -->
+    <template id="prevention-template">
         <ons-page id="first-page">
                 <div class="content content-container">
                         <h1> COVID-19 Prevention </h1>
@@ -171,6 +222,8 @@
         <ons-page id="list">
             
 
+            <div style="margin-top: 5px; width: 100%; display: flex; justify-content: center;" class="center">
+
         
                    <!-- MODAL -->
               <ons-modal  direction="up">
@@ -193,6 +246,7 @@
             <!-- Dont change under -->     
               <div style="margin-top: 5px; width: 100%; display: flex; justify-content: center;" class="center">
 
+
             </div>
             </ons-toolbar>
             <ons-list id="web-list-node">
@@ -202,7 +256,72 @@
         </ons-page>
     </template>
 
-    
+    <template id="Detail.html">
+        <ons-page id="Detail">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button id="reset">home</ons-back-button>
+                </div>
+                <div class="center"></div>
+            </ons-toolbar>
+
+            <div style=" display:flex; justify-content: center; width: 100%; background-color: transparent;"><img
+                    style="width: 80%;" id="SingleImg"></div>
+            <div class="text-center">
+                <h1 id="SingleTitle"></h1>
+            </div>
+            <div style="text-align: center;">
+                <h4 id="SingleContent"></h4>
+            </div>
+            <div class="center desc-card" style="padding-left: 10%;">
+                <table>
+                <tr> 
+                     <td class="table-hd">Total Confirmed: </td>
+                     <td>
+                    <p class="content" id="totalConfirmed"></p>
+                    </td>
+                </tr>
+                <tr>
+                     <td class="table-hd">Total Deaths: </td>
+                     <td>
+                    <p class="content" id="totalDeaths"></p>
+                    </td>
+                    </tr>
+                <tr>
+                     <td class="table-hd">Total Recovered: </td>
+                     <td>
+                    <p class="content" id="totalRecovered"></p>
+                    </td>
+                    </tr>
+                <tr>
+                     <td class="table-hd">New Confirmed: </td>
+                     <td>
+                    <p class="content" id="newConfirmed"></p>
+                    </td>
+                    </tr>
+               <tr>
+                 <td class="table-hd">New Deaths: </td>
+                 <td>
+                <p class="content" id="newDeaths"></p>
+                </td>
+                </tr>
+               <tr>
+                 <td class="table-hd">New Recovered: </td>
+                 <td>
+                <p class="content" id="newRecovered"></p>
+                </td>
+                </tr>
+                <tr>
+                     <td>
+                    <p class="content" style="position:absolute; bottom: 20px;" id="date"></p>
+                    </td>
+                </tr>
+                </table>
+            </div>
+
+
+        </ons-page>
+    </template>
 
     <ons-modal id="spinner-modal">
         <div style="margin: auto;">
@@ -210,15 +329,15 @@
         </div>
     </ons-modal>
 
+    <script type="text/javascript" src="js/covid-id.js"></script>
     <script type="text/javascript" src="js/userPref.js"></script>
-    <script type="text/javascript" src="js/listModal.js"></script>
     <script type="text/javascript" src="js/covid.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 
     <script>
         // since we are using tabs we can just set the home button universally
-       
+
 
         document.addEventListener('init', function(event) {
             // get a reference to the element (page that fired the init event)
@@ -234,11 +353,11 @@
 
             var firstPage = document.getElementById('first-page');
             var currPref = window.localStorage.getItem('userPref');
-            
-           
-            
-            
-            
+
+
+
+
+
 
             if (currPref !== null) {
                 var selectCountry = JSON.parse(currPref).country;
@@ -247,20 +366,20 @@
             } else {
                 firstPage.querySelector('#msgSpace').innerHTML = "No preferences in LocalStorage";
                 document.querySelector(
-              "#home-totalConfirmed"
-            ).innerHTML = "";
-            document.querySelector("#home-totalDeaths").innerHTML = "";
-            document.querySelector(
-              "#home-totalRecovered"
-            ).innerHTML = "";
-            document.querySelector(
-              "#home-newConfirmed"
-            ).innerHTML = "";
-            document.querySelector("#home-newDeaths").innerHTML = "";
-            document.querySelector(
-              "#home-newRecovered"
-            ).innerHTML = "";
-            document.querySelector("#home-date").innerHTML = "";
+                    "#home-totalConfirmed"
+                ).innerHTML = "";
+                document.querySelector("#home-totalDeaths").innerHTML = "";
+                document.querySelector(
+                    "#home-totalRecovered"
+                ).innerHTML = "";
+                document.querySelector(
+                    "#home-newConfirmed"
+                ).innerHTML = "";
+                document.querySelector("#home-newDeaths").innerHTML = "";
+                document.querySelector(
+                    "#home-newRecovered"
+                ).innerHTML = "";
+                document.querySelector("#home-date").innerHTML = "";
             }
         }
 
@@ -309,8 +428,6 @@
 
             }
         }
-
-
     </script>
 </body>
 
