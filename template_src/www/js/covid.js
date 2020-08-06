@@ -8,7 +8,7 @@ function listCountries() {
     for (let i = 0; i <= all.Countries.length; i++) {
       var createListItem = function(i) {
         return ons.createElement(
-          '<ons-list-item id="myLi">' +
+          "<ons-list-item>" +
             '<span class="list-item__subtitle" id="Name" style="font-weight: 500;">' +
             all.Countries[i].Country +
             "</span></div>" +
