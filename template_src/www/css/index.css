@@ -18,284 +18,283 @@
  */
 
 * {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-    -webkit-touch-callout: none;
-    /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;
-    /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;
-    /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color: #E4E4E4;
-    background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    font-size: 12px;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
-    /* Padding to avoid the "unsafe" areas behind notches in the screen */
-    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
-    text-transform: uppercase;
-    width: 100%;
+  -webkit-touch-callout: none;
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;
+  /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-color: #e4e4e4;
+  background-image: linear-gradient(top, #a7a7a7 0%, #e4e4e4 51%);
+  font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
+    "Roboto", sans-serif;
+  font-size: 12px;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  /* Padding to avoid the "unsafe" areas behind notches in the screen */
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
+  text-transform: uppercase;
+  width: 100%;
 }
-
 
 /* Portrait layout (default) */
 
 .app {
-    background: url(../img/logo.png) no-repeat center top;
-    /* 170px x 200px */
-    position: absolute;
-    /* position in the center of the screen */
-    left: 50%;
-    top: 40%;
-    height: 50px;
-    /* text area height */
-    width: 225px;
-    /* text area width */
-    text-align: center;
-    padding: 180px 0px 0px 0px;
-    /* image height is 200px (bottom 20px are overlapped with text) */
-    margin: -115px 0px 0px -112px;
-    /* offset vertical: half of image height and text area height */
-    /* offset horizontal: half of text area width */
+  background: url(../img/logo.png) no-repeat center top;
+  /* 170px x 200px */
+  position: absolute;
+  /* position in the center of the screen */
+  left: 50%;
+  top: 40%;
+  height: 50px;
+  /* text area height */
+  width: 225px;
+  /* text area width */
+  text-align: center;
+  padding: 180px 0px 0px 0px;
+  /* image height is 200px (bottom 20px are overlapped with text) */
+  margin: -115px 0px 0px -112px;
+  /* offset vertical: half of image height and text area height */
+  /* offset horizontal: half of text area width */
 }
-
 
 /* Landscape layout (with min-width) */
 
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position: left center;
-        padding: 75px 0px 75px 170px;
-        /* padding-top + padding-bottom + text area = image height */
-        margin: -90px 0px 0px -198px;
-        /* offset vertical: half of image height */
-        /* offset horizontal: half of image width and text area width */
-    }
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
+  .app {
+    background-position: left center;
+    padding: 75px 0px 75px 170px;
+    /* padding-top + padding-bottom + text area = image height */
+    margin: -90px 0px 0px -198px;
+    /* offset vertical: half of image height */
+    /* offset horizontal: half of image width and text area width */
+  }
 }
 
 h1 {
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0px;
-    overflow: visible;
-    padding: 0px;
-    text-align: center;
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0px;
+  overflow: visible;
+  padding: 0px;
+  text-align: center;
 }
-
 
 /* SPLASH SCREEN */
 
 #splash {
-    background: url(../img/masks.jpg) no-repeat center top;
-    color: #fff;
+  background: url(../img/masks.jpg) no-repeat center top;
+  color: #fff;
 }
 
 /* BUTTONS */
 
 ons-button.button {
-    background: #9CC22C;
+  background: #9cc22c;
 }
 
 .btn-primary {
-    background-color: #9CC22C;
-    padding: 10px 15px;
-    border-radius: 16px;
-    border:none;
-    font-size: 1em;
-    font-weight: 500;
-    text-transform: uppercase;
+  background-color: #9cc22c;
+  padding: 10px 15px;
+  border-radius: 16px;
+  border: none;
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 /* PREVENTION */
 
 .prevention-card {
-    background: #fff;
-    border-radius: 5px;
-    margin: 15px;
-    padding: 20px;
-    color: #252525;
+  background: #fff;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 20px;
+  color: #252525;
 }
 
 tr {
-    margin-top: 20px;
-    height: 150px;
-    padding: 5px;
+  margin-top: 20px;
+  height: 150px;
+  padding: 5px;
 }
 
 tr.h2 {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .prevention-text {
-    font-size: 12px;
-    text-transform: none;
+  font-size: 12px;
+  text-transform: none;
 }
 
 .prevention-row {
-    border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .covid-svg {
-    width: 80%;
+  width: 80%;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    background-color: #edf0f6;
+  font-family: "Roboto", sans-serif;
+  background-color: #edf0f6;
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 580px;
-    padding: 0;
+  margin: 0 auto;
+  max-width: 580px;
+  padding: 0;
 }
 
 .header {
-    color: #55565a;
-    font-size: 2.2em;
-    font-weight: 400;
-    margin-bottom: 0;
+  color: #55565a;
+  font-size: 2.2em;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 .todo {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 16%;
-    overflow: hidden;
-    padding: 1.5em;
-    margin: 25px 5px 0;
-    width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 16%;
+  overflow: hidden;
+  padding: 1.5em;
+  margin: 25px 5px 0;
+  width: 500px;
 }
 
 .todomain {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 72%;
-    overflow: hidden;
-    padding: 1.5em;
-    margin: 25px 5px 0;
-    width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 72%;
+  overflow: hidden;
+  padding: 1.5em;
+  margin: 25px 5px 0;
+  width: 500px;
 }
 
 .todosec {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 30%;
-    overflow: hidden;
-    padding: 1.5em;
-    margin: 25px 5px 0;
-    width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 30%;
+  overflow: hidden;
+  padding: 1.5em;
+  margin: 25px 5px 0;
+  width: 500px;
 }
 
 .todo::after {
-    bottom: -5px;
-    color: #f3f3f3;
-    font-family: "Font Awesome 5 Free";
-    font-size: 7em;
-    position: absolute;
-    right: 0px;
-    transform: rotate(-30deg);
+  bottom: -5px;
+  color: #f3f3f3;
+  font-family: "Font Awesome 5 Free";
+  font-size: 7em;
+  position: absolute;
+  right: 0px;
+  transform: rotate(-30deg);
 }
 
 .todomain::after {
-    bottom: -5px;
-    color: #f3f3f3;
-    font-family: "Font Awesome 5 Free";
-    font-size: 7em;
-    position: absolute;
-    right: 0px;
-    transform: rotate(-30deg);
+  bottom: -5px;
+  color: #f3f3f3;
+  font-family: "Font Awesome 5 Free";
+  font-size: 7em;
+  position: absolute;
+  right: 0px;
+  transform: rotate(-30deg);
 }
 
 .todo--emergency .todo__amount {
-    color: #a0302f;
+  color: #a0302f;
 }
 
 .todo--emergency::after {
-    content: "\f024";
+  content: "\f024";
 }
 
 .todo--remaining .todo__amount {
-    color: #2f429e;
+  color: #2f429e;
 }
 
 .todo--remaining::after {
-    content: "\f14a";
+  content: "\f14a";
 }
 
 .todo--current .todo__amount {
-    color: #d29037;
+  color: #d29037;
 }
 
 .todo--current::after {
-    content: "\f007";
+  content: "\f007";
 }
 
 .todo--finished .todo__amount {
-    color: #37c2ce;
+  color: #37c2ce;
 }
 
 .todo__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .todomain__container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .todo__amount {
-    margin: 15px 0;
-    font-size: 2em;
-    font-weight: 400;
+  margin: 15px 0;
+  font-size: 2em;
+  font-weight: 400;
 }
 
 .todomain__amount {
-    margin: 15px 0;
-    font-size: 2em;
-    font-weight: 400;
+  margin: 15px 0;
+  font-size: 2em;
+  font-weight: 400;
 }
 
 .todo__link {
-    color: #2f429e;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 500;
-    margin: 0;
-    width: fit-content;
+  color: #2f429e;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0;
+  width: fit-content;
 }
 
 .todomain__link {
-    color: #2f429e;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 500;
-    margin: 0;
-    width: fit-content;
+  color: #2f429e;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0;
+  width: fit-content;
 }
 
 #msgSpace {
-    color: #f8f8f8;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 28px;
-    font-weight: 900;
+  color: #f8f8f8;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 900;
 }
 =======
 /* MODAL */
@@ -315,15 +314,13 @@ body {
 }
 
 .h2-border {
-    border-bottom: 1px solid #9CC22C;
+  border-bottom: 1px solid #9cc22c;
 }
 
 .modal-head {
-    font-weight: 700;
-
+  font-weight: 700;
 }
 
 .modal > p {
-  font-size:16px;
+  font-size: 16px;
 }
-
