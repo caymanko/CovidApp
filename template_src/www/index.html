@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="./lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="./lib/onsenui/css/onsen-css-components.min.css">
+
+
     <script src="./lib/onsenui/js/onsenui.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -22,33 +24,42 @@
 
 <body>
 
-    <ons-page id="main-page">
-        <ons-toolbar>
-            <div class="center">COVID-19 Tracker</div>
-            <div class="right">
-                <!-- <ons-toolbar-button id="home-button">
-                    <ons-icon icon="md-home"></ons-icon>
-                </ons-toolbar-button> -->
-            </div>
-        </ons-toolbar>
 
-        <ons-tabbar swipeable position="bottom">
-            <ons-tab page="first-template" label="Home" icon="md-home" active>
-            </ons-tab>
-            <ons-tab page="prevention-template" label="Prevention" icon="md-face">
-            </ons-tab>
-            <ons-tab page="list-template" label="List" icon="md-book">
-            </ons-tab>
-            <ons-tab page="pref-template" label="Preferences" icon="md-settings">
-            </ons-tab>
-        </ons-tabbar>
+
+    <ons-tabbar swipeable position="bottom">
+        <ons-tab page="first-template" label="Home" icon="md-home" active>
+        </ons-tab>
+        <ons-tab page="prevention-template" label="Prevention" icon="md-face">
+        </ons-tab>
+        <ons-tab page="list-template" label="List" icon="md-book">
+        </ons-tab>
+        <ons-tab page="pref-template" label="Preferences" icon="md-settings">
+        </ons-tab>
+    </ons-tabbar>
     </ons-page>
     <template id="first-template">
         <ons-page id="first-page">
                 <div class="content content-container">
                    
-                    <div span id="msgSpace">COUNTRY</div>
-                    
+                    <div span id="titletext">Dashboard</div>
+                  
+                        <div class="country-top">
+                            <i class="fas fa-flag" style="color:#fff;"></i>
+                            <div span id="msgSpace">Country</div>
+                            <a href="#" class="refresh-btn"onclick="checkPref()">
+                                <i class="fas fa-sync-alt"  style="color:#fff; padding-right: 10px;"></i>
+                                
+                                <i class="fas fa-exclamation-circle" style="color:#FF2D6A;" ></i>
+                                
+                            </a>
+                            
+                            
+                        </div>
+                        <!-- <div class="btn-space" style="margin-top:25px; display: flex;  margin: auto;
+                        width: 50%; margin-top: 20px;">
+                            <ons-button class="btn-link" onclick="checkPref()">Update Results</ons-button>
+                        </div> -->
+              
                     <div class="container">
                         
                         <!-- <h1 id="msgSpace">Todo List</h1> -->
@@ -58,34 +69,43 @@
                 
                 
                 
-                            <div class="todomain todo--finished">
-                               
+                            <div class="todosec1 todo--finished">
+                                <i class="fas fa-user-friends" style="color:#892DFE; font-size: 20px;"></i>
+                                <p class="todo__link">Total Cases</p>
                                 <h2 class="todo__amount content" id="home-totalConfirmed">0</h2>
-                                <p class="todo__link">Total Confirmed</p>
+                                
                             </div>
 
-                            <div class="todo todo--finished">
-                                <h2 class="todo__amount" id="home-totalDeaths">0</h2>
+                            <div class="todosec todo--finished">
+                                <i class="fas fa-skull" style="color:#37EC8F; font-size: 20px;"></i>
                                 <p class="todo__link">Total Deaths</p>
+                                <h2 class="todo__amount" id="home-totalDeaths">0</h2>
+                                
                             </div>
 
-                            <div class="todo todo--finished">
-                                <h2 class="todo__amount" id="home-newDeaths">0</h2>
+                            <div class="todosec1 todo--finished">
+                                <i class="fas fa-ambulance" style="color:#3D85FE; font-size: 20px;"></i>
                                 <p class="todo__link">New Deaths</p>
+                                <h2 class="todo__amount" id="home-newDeaths">0</h2>
+                                
                             </div>
 
-                            <div class="todo todo--finished">
-                                <h2 class="todo__amount" id="home-newConfirmed">0</h2>
+                            <div class="todosec todo--finished">
+                                <i class="fas fa-temperature-high" style="color:#FF545A; font-size: 20px;"></i>
                                 <p class="todo__link">New Confirmed</p>
+                                <h2 class="todo__amount" id="home-newConfirmed">0</h2>
+                                
                             </div>
 
-                            <div class="todosec todo--finished">
-                                <h2 class="todo__amount"id="home-totalRecovered" >0</h2>
-                                <p class="todo__link">Total Recovered</p>
+                            <div class="todomain todo--finished">
+                                <i class="fas fa-user-nurse" style="color:#FFf; font-size: 26px;"></i>
+                                <h2 class="todo__amountc"id="home-totalRecovered" >0</h2>
+                                <p class="todo__linkc"> Total <br>Recovered</p>
                             </div>
-                            <div class="todosec todo--finished">
-                                <h2 class="todo__amount"id="home-newRecovered" >0</h2>
-                                <p class="todo__link">New <br>Recovered</p>
+                            <div class="todomain2 todo--finished">
+                                <i class="fas fa-hospital" style="color:#FFf; font-size: 26px;"></i>
+                                <h2 class="todo__amountc"id="home-newRecovered" >0</h2>
+                                <p class="todo__linkc"> New <br>Recovered</p>
                             </div>
                             <!-- <div class="todomain todo--finished">
                                 <h2 class="todo__amount"id="home-date" >0</h2>
@@ -97,10 +117,7 @@
                         
                 
                     </div>
-                    <div class="btn-space" style="margin-top:25px; display: flex;  margin: auto;
-                    width: 50%; margin-top: 20px;">
-                        <ons-button class="btn-link" onclick="checkPref()">Update Results</ons-button>
-                    </div>
+                   
     
 
                     <!-- <div class="center desc-card" style="padding-left: 10%;">
