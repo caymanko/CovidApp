@@ -46,18 +46,22 @@ body {
 /* Portrait layout (default) */
 
 .app {
-
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:40%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-
+    background: url(../img/logo.png) no-repeat center top;
+    /* 170px x 200px */
+    position: absolute;
+    /* position in the center of the screen */
+    left: 50%;
+    top: 40%;
+    height: 50px;
+    /* text area height */
+    width: 225px;
+    /* text area width */
+    text-align: center;
+    padding: 180px 0px 0px 0px;
+    /* image height is 200px (bottom 20px are overlapped with text) */
+    margin: -115px 0px 0px -112px;
+    /* offset vertical: half of image height and text area height */
+    /* offset horizontal: half of text area width */
 }
 
 
@@ -74,41 +78,35 @@ body {
     }
 }
 
-
-
 h1 {
-
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
 }
 
 
 /* SPLASH SCREEN */
 
 #splash {
-
-     background:url(../img/masks.jpg) no-repeat center top;
-     color: #fff;
-
+    background: url(../img/masks.jpg) no-repeat center top;
+    color: #fff;
 }
 
 ons-button.button {
     background: #9CC22C;
 }
 
+
 /* PREVENTION */
 
 .prevention-card {
     background: #fff;
     border-radius: 5px;
-    margin:15px;
+    margin: 15px;
     padding: 20px;
-
     color: #252525;
 }
 
@@ -119,8 +117,9 @@ tr {
 }
 
 tr.h2 {
-    font-size:16px;
+    font-size: 16px;
 }
+
 .prevention-text {
     font-size: 12px;
     text-transform: none;
@@ -130,7 +129,161 @@ tr.h2 {
     border-bottom: 1px solid #ccc;
 }
 
-
 .covid-svg {
     width: 80%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #edf0f6;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 580px;
+    padding: 0;
+}
+
+.header {
+    color: #55565a;
+    font-size: 2.2em;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.todo {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 16%;
+    overflow: hidden;
+    padding: 1.5em;
+    margin: 25px 5px 0;
+    width: 500px;
+}
+
+.todomain {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 72%;
+    overflow: hidden;
+    padding: 1.5em;
+    margin: 25px 5px 0;
+    width: 500px;
+}
+
+.todosec {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 30%;
+    overflow: hidden;
+    padding: 1.5em;
+    margin: 25px 5px 0;
+    width: 500px;
+}
+
+.todo::after {
+    bottom: -5px;
+    color: #f3f3f3;
+    font-family: "Font Awesome 5 Free";
+    font-size: 7em;
+    position: absolute;
+    right: 0px;
+    transform: rotate(-30deg);
+}
+
+.todomain::after {
+    bottom: -5px;
+    color: #f3f3f3;
+    font-family: "Font Awesome 5 Free";
+    font-size: 7em;
+    position: absolute;
+    right: 0px;
+    transform: rotate(-30deg);
+}
+
+.todo--emergency .todo__amount {
+    color: #a0302f;
+}
+
+.todo--emergency::after {
+    content: "\f024";
+}
+
+.todo--remaining .todo__amount {
+    color: #2f429e;
+}
+
+.todo--remaining::after {
+    content: "\f14a";
+}
+
+.todo--current .todo__amount {
+    color: #d29037;
+}
+
+.todo--current::after {
+    content: "\f007";
+}
+
+.todo--finished .todo__amount {
+    color: #37c2ce;
+}
+
+.todo__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.todomain__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.todo__amount {
+    margin: 15px 0;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.todomain__amount {
+    margin: 15px 0;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.todo__link {
+    color: #2f429e;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0;
+    width: fit-content;
+}
+
+.todomain__link {
+    color: #2f429e;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0;
+    width: fit-content;
+}
+
+#msgSpace {
+    color: #f8f8f8;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: 900;
 }
