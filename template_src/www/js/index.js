@@ -17,42 +17,42 @@
  * under the License.
  */
 var app = {
-  // Application Constructor
-  initialize: function() {
-    document.addEventListener(
-      "deviceready",
-      this.onDeviceReady.bind(this),
-      false
-    );
-  },
+    // Application Constructor
+    initialize: function() {
+        document.addEventListener(
+            "deviceready",
+            this.onDeviceReady.bind(this),
+            false
+        );
+    },
 
-  // deviceready Event Handler
-  //
-  // Bind any cordova events here. Common events are:
-  // 'pause', 'resume', etc.
-  onDeviceReady: function() {
-    this.receivedEvent("deviceready");
-  },
+    // deviceready Event Handler
+    //
+    // Bind any cordova events here. Common events are:
+    // 'pause', 'resume', etc.
+    onDeviceReady: function() {
+        this.receivedEvent("deviceready");
+    },
 
-  // Update DOM on a Received Event
-  receivedEvent: function(id) {
-    var parentElement = document.getElementById(id);
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
 
-    navigator.splashscreen.hide();
-  },
+        navigator.splashscreen.hide();
+    },
 };
 
 app.initialize();
 
 document.addEventListener("init", function(event) {
-  // get a reference to the element (page that fired the init event)
-  var page = event.target;
+    // get a reference to the element (page that fired the init event)
+    var page = event.target;
 
-  if (page.id === "list") {
-    listCountries();
-  }
+    if (page.id === "list") {
+        listCountries();
+    }
 
-  if (page.id === "Detail") {
-    getapi(page.data.pIndex);
-  }
+    if (page.id === "Detail") {
+        getapi(page.data.pIndex);
+    }
 });
