@@ -3,7 +3,7 @@
 
         function pushButton() {
 
-                  document.querySelector('#myNavigator').pushPage('template-signup');
+                  document.querySelector('#myNavigator').pushPage('tabbar-template');
               
             };
 
