@@ -1,4 +1,7 @@
-                document.addEventListener('init', function(event) {
+//  =========================            
+
+
+        document.addEventListener('init', function(event) {
               var page = event.target;
 
               if (page.id === 'pref-template') {
@@ -76,46 +79,3 @@
 
             }
 
-
-// ==========================
-
-
-            // fired by each button in the list 
-        //     function pushSingleView(){ 
-  
-        //     // push the single page view on the stack and also add the current id as a data member 
-        //     var myNavigator = document.getElementById('myNavigator');
-
-        //     myNavigator.pushPage('#template-signup');
-        // }
-
-    
-           
-           // // // listen for when an element is initialized
-           // //  document.addEventListener('init', function(event) {   
-
-           // //      // get a reference to the element (page that fired the init event)
-           // //      var page = event.target;
-
-           // //      // we are only concerned with setting the data if it's the single view page
-           // //      if (page.id === 'page-signup') {                    
-           // //          // set the toolbar center item to show the page.data.title
-                    
-           // //          page.querySelector('ons-toolbar .center').innerHTML = page.data.cJob.title;
-
-           // //          // set the other elements
-           // //          page.querySelector('#singleImg').src = page.data.cJob.path;
-           // //          page.querySelector('#singleTitle').innerHTML = page.data.cJob.title;
-           // //          page.querySelector('#singleContent').innerHTML = page.data.cJob.desc;
-           // //      }
-
-           // //      // Navigate back to main page
-
-           // //      if (page.id === 'page-main') {   
-                      
-           // //          page.querySelector('#home-button').onclick = function() {
-           // //         window.location = './index.html';
-           // //         }; 
-           // //      }
-
-           //  });
