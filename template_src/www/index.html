@@ -42,11 +42,11 @@
 <template id="second">
         <ons-page id="second">
             <div class="onboard-container">
-                <h1>Learn</h1>
-                <img class="onboard-svg" src="img/doctor.svg">
-                        
+                
+                <img class="onboard-svg learn-svg" src="img/doctor.svg">
+                        <h1>Learn</h1>
                         <p class="onboard-text">Discover ways you can prevent infection and stop the spread.</p>
-            <ons-button class="button push-button" onclick="pushButton2()">Continue</ons-button>
+            <ons-button class="button push-button" onclick="pushButton2()">Next</ons-button>
         </div>
 </ons-page>
 </template>
@@ -54,11 +54,11 @@
 <template id="third">
         <ons-page id="third">
                     <div class="onboard-container">
-                         <img class=" onboard-svg" src="img/world.svg" >
+                         <img class="onboard-svg " src="img/world.svg">
                         <h1>Track</h1>
                         <p class="onboard-text">View current recovered and deaths for your home country.</p>
 
-            <ons-button class="button push-button" onclick="pushButton3()">Continue</ons-button>
+            <ons-button class="button push-button" onclick="pushButton3()">Sign up now</ons-button>
         </div>
 </ons-page>
 </template>
@@ -72,36 +72,43 @@
                     <div class="center"></div>
                 </ons-toolbar>
                  <ons-card>
-                    <div class="apply-header">   
-                        Create an account     
-                    </div>                    
+                
                     <div class="content">
-                        <h3 class="section-break">Your Details</h3>
+                        <h1 id="create-account">Create an account</h1>
 
-                        <div>
-                            <!-- notice we use input-id here and not id, this is for the form field association -->
-                            <label for="fullName">Full Name</label>
-                            <div><ons-input input-id="fullName" class="form-field-full" modifier="underbar" placeholder="full name"></ons-input></div>
+                        <div class="input-signup">
+                            <label for="firstName">First name</label>
+                            <div><ons-input input-id="firstName" class="form-field-full" modifier="underbar" placeholder="Enter first name"></ons-input></div>
                         </div>
 
-                        <div>
+                        <div class="input-signup">
+                             <label for="lastName">Last name</label>
+                            <div><ons-input input-id="lastName" class="form-field-full" modifier="underbar" placeholder="Enter last name"></ons-input></div>
+                        </div>
+
+                        <div class="input-signup">
                             <label for="email">Email Address</label>
-                            <div><ons-input input-id="email" class="form-field-full" modifier="underbar" placeholder="email"></ons-input></div>
+                            <div><ons-input input-id="email" class="form-field-full" modifier="underbar" placeholder="Enter email"></ons-input></div>
+                        </div>
+
+                        <div class="input-signup">
+                            <label for="email">Password</label>
+                            <div><ons-input input-id="email" class="form-field-full" modifier="underbar" placeholder="Enter password"></ons-input></div>
                         </div>
                        
-                                    <!-- SUBMIT -->
+                <!-- SUBMIT -->
 
                          <ons-checkbox input-id="agreeTerms" onchange="toggleSubmit(this)"></ons-checkbox>
-                        <label for="agreeTerms" class="center">
+                        <label for="agreeTerms" class="center agreeTerms">
                             I agree to the terms of service
                         </label>
                     
-                        <div style="text-align: center">
-                        <ons-button class="btn-primary " id="submitBtn" disabled onclick="submitBooking()">
+                        <div  class="submit-button">
+                        <ons-button class="btn-primary" id="submitBtn" disabled onclick="submitBooking()">
                             Submit
                         </ons-button>
 
-                         <ons-button class="button push-button" onclick="pushButtonDash()">Continue</ons-button>
+                        <a id="skipSignup" onclick="pushButtonDash()">Skip</a>
 
                     </div>
                         
@@ -114,22 +121,30 @@
 
          <!-- ===================== Dialog Confirmation ===================== -->
         
-        <template id="booking-confirm-template">
-            <ons-dialog id="booking-dialog">
+        <template id="booking-confirm-template" class="dialogue-card">
+            <ons-dialog id="booking-dialog" >
               <div style="text-align: center; padding: 10px;">
                 <h3>
-                  Thank you, <span id="fullName"></span>!
+                  Thank you, <span id="firstName"></span>!
                 </h3>
 
-                <p>
-                    Your application for <span id="confirm-date"></span> has been recieved and will be forwarded to the original poster.
+                <p style="text-transform: none;">
+                    Your account has been created.
                 </p>
 
-                  <ons-button class="btn-primary" onclick="navToMain()">Close</ons-button>
+                   <ons-button class="button push-button" onclick="pushButtonDash()">Continue</ons-button>
                 </p>
               </div>
             </ons-dialog>
         </template>
+
+
+           <!-- SPINNER FOR FORM ENTRY -->        
+        <ons-modal id="spinner-modal">
+            <div style="margin: auto;">
+                <ons-icon icon="md-spinner" size="70px" spin></ons-icon>              
+            </div>
+        </ons-modal>
 
 <template id="tabbar-template">
         <ons-page id="tabbar-page">
@@ -391,13 +406,7 @@
 
         
 
-        
-           <!-- SPINNER FOR FORM ENTRY -->        
-        <ons-modal id="spinner-modal">
-            <div style="margin: auto;">
-                <ons-icon icon="md-spinner" size="70px" spin></ons-icon>              
-            </div>
-        </ons-modal>
+
 
     <script type="text/javascript" src="js/signup.js"></script>
     <script type="text/javascript" src="js/listModal.js"></script>

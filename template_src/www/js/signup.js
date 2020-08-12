@@ -14,15 +14,18 @@
             };
 
         function pushButtonDash() {
-                  document.querySelector('#myNavigator').pushPage('tabbar-template');             
-            };
+                  document.querySelector('#myNavigator').pushPage('tabbar-template');
 
+                // hides dialog
+                document.getElementById('booking-dialog').hide();
+            
+            };
 
 
 
 // ========================= FORM SUBMISSION =========================
 
-
+            
             //  SUBMIT
 
             function toggleSubmit(target){
@@ -34,7 +37,7 @@
 
             function submitBooking(){
 
-                var page = document.getElementById('page-single');
+                var page = document.getElementById('page-signup');
 
                 // first get the spinner modal and show it
                 var spinnerModal = document.querySelector('#spinner-modal');                
@@ -43,10 +46,8 @@
                 // then build the object (just partially shown here)
                 var bookingData = {
 
-                    guestName: page.querySelector('#fullName').value,
-                    
-                    arrDate: new Date(page.querySelector('#arrDate').value),
-                    
+                    guestName: page.querySelector('#firstName').value,
+                                        
                 }
 
                 // SPINNER SIMULATES DATA TO END POINT
@@ -61,26 +62,13 @@
                         .then(function(bookingDialog) {
                             // set the display data
 
-                            
-                            bookingDialog.querySelector('#confirm-date').innerHTML = '<span class="dialog-em">' + bookingData.arrDate.toDateString() + '</span>';
-
-                            bookingDialog.querySelector('#fullName').innerHTML = '<span class="dialog-em">' + bookingData.guestName + '</span>';
+                        
+                            bookingDialog.querySelector('#firstName').innerHTML = '<span class="dialog-em">' + bookingData.guestName + '</span>';
                             
 
                             bookingDialog.show();
                         });
                     
-                }, 1000);                
+                }, 800);                
                 
             }
-
-            // fired from the booking-dialog
-            function navToMain(){
-
-                // right now the booking page is on the detail which is on the list
-                // so we want to pop off the 2 pages to go back to the list                
-                document.querySelector('#myNavigator').popPage({times: 2});
-                document.getElementById('booking-dialog').hide();
-
-            }
-

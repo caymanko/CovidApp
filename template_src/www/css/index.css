@@ -91,10 +91,52 @@ ons-button.button {
      margin: 0 auto;
 }
 
+    .learn-svg {
+        padding-top: 40%;
+    }
+
 .onboard-text {
     font-size: 14px;
     text-transform: none;
 
+}
+
+/* SIGNUP */
+
+.input-signup {
+    margin: 10px 5px;
+}
+
+.input-signup > label {
+    font-size: 12px;
+    font-weight: 700;
+
+}
+
+.agreeTerms {
+    font-size: 12px;
+    text-transform: none;
+    margin:5px;
+}
+
+#create-account {
+    text-transform: none;
+    font-size: 18px;
+} 
+
+.submit-button {
+    margin-top: 15px;
+}
+#skipSignup {
+    margin: 10px;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+.dialog-container {
+    background: #eee !important;
+    color: #252525;
+    text-transform: none;
 }
 
 /* PREVENTION */
