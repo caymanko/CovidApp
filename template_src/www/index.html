@@ -343,7 +343,7 @@
 
                 <div class="form-group">
                     <label for="country">Type a Country</label>
-                    <div><ons-input input-id="country" class="form-field-full" placeholder="Enter country name" modifier="underbar"></ons-input></div>
+                    <div><ons-input input-id="country" class="form-field-full" placeholder="Enter country name" modifier="underbar" id="desiredCountry"></ons-input></div>
                 </div>
 
                 
@@ -486,6 +486,7 @@
 
         function clearPref() {
             window.localStorage.removeItem('userPref');
+            document.getElementById('desiredCountry').value = "";
         }
 
         function setPrefFields() {
