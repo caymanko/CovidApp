@@ -29,30 +29,37 @@
 
 <template id="first">
         <ons-page id="first">
-             <img id="IllustrationSVG" class="center" src="./img/SVG/Undraw_Find.svg">
-                    <div class="onboardText">
-                        <h1> Welcome </h1>
-                        <h3> <span class="headingH3"> Choose from your city’s largest used bike catalogue </span></h3>
-                        <ons-button class="button" id="push-button" onclick="pushButton()">Continue</ons-button></ons-button>
+             
+                    <div class="onboard-container">
+                        <img class="onboard-svg" src="img/mask-girl.svg">
+                        <h1>Welcome to <br>COVID-19 Tracker</h1>
+                        <p class="onboard-text">Track the global pandemic in real time.</p>
+                        <ons-button class="button push-button" onclick="pushButton()">Continue</ons-button></ons-button>
                     </div>
-           
-
-</ons-page>
+           </ons-page>
 </template>
 
 <template id="second">
         <ons-page id="second">
-
-            <ons-button class="button" id="push-button" onclick="pushButton2()">Continue</ons-button>
-
+            <div class="onboard-container">
+                <h1>Learn</h1>
+                <img class="onboard-svg" src="img/doctor.svg">
+                        
+                        <p class="onboard-text">Discover ways you can prevent infection and stop the spread.</p>
+            <ons-button class="button push-button" onclick="pushButton2()">Continue</ons-button>
+        </div>
 </ons-page>
 </template>
 
 <template id="third">
         <ons-page id="third">
+                    <div class="onboard-container">
+                         <img class=" onboard-svg" src="img/world.svg" >
+                        <h1>Track</h1>
+                        <p class="onboard-text">View current recovered and deaths for your home country.</p>
 
-            <ons-button class="button" id="push-button" onclick="pushButton3()">Continue</ons-button>
-
+            <ons-button class="button push-button" onclick="pushButton3()">Continue</ons-button>
+        </div>
 </ons-page>
 </template>
 
@@ -102,7 +109,7 @@
                             Submit
                         </ons-button>
 
-                         <ons-button class="button" id="push-button" onclick="pushButtonDash()">Continue</ons-button>
+                         <ons-button class="button push-button" onclick="pushButtonDash()">Continue</ons-button>
 
                     </div>
                         
