@@ -31,7 +31,7 @@ body {
     /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color: #e4e4e4;
     background-image: linear-gradient(top, #a7a7a7 0%, #e4e4e4 51%);
-    font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI", "Roboto", sans-serif;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Poppins', sans-serif;
     font-size: 12px;
     height: 100vh;
     padding: 0px;
@@ -41,41 +41,6 @@ body {
     width: 100%;
 }
 
-
-/* Portrait layout (default) */
-
-.app {
-    background: url(../img/logo.png) no-repeat center top;
-    /* 170px x 200px */
-    position: absolute;
-    /* position in the center of the screen */
-    left: 50%;
-    top: 40%;
-    height: 50px;
-    /* text area height */
-    width: 225px;
-    /* text area width */
-    text-align: center;
-    padding: 180px 0px 0px 0px;
-    /* image height is 200px (bottom 20px are overlapped with text) */
-    margin: -115px 0px 0px -112px;
-    /* offset vertical: half of image height and text area height */
-    /* offset horizontal: half of text area width */
-}
-
-
-/* Landscape layout (with min-width) */
-
-@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
-    .app {
-        background-position: left center;
-        padding: 75px 0px 75px 170px;
-        /* padding-top + padding-bottom + text area = image height */
-        margin: -90px 0px 0px -198px;
-        /* offset vertical: half of image height */
-        /* offset horizontal: half of image width and text area width */
-    }
-}
 
 h1 {
     font-size: 24px;
@@ -87,28 +52,9 @@ h1 {
 }
 
 
-/* SPLASH SCREEN */
-
-#splash {
-    background: url(../img/masks.jpg) no-repeat center top;
-    color: #fff;
-}
-
-
-/* BUTTONS */
-
 ons-button.button {
-    background: #9cc22c;
-}
+    background: linear-gradient(45deg, rgba(255, 116, 75, 1) -10%, rgba(255, 45, 106, 1) 70%);
 
-.btn-primary {
-    background-color: #9cc22c;
-    padding: 10px 15px;
-    border-radius: 16px;
-    border: none;
-    font-size: 1em;
-    font-weight: 500;
-    text-transform: uppercase;
 }
 
 
@@ -145,10 +91,6 @@ tr.h2 {
     width: 80%;
 }
 
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: #edf0f6;
-}
 
 .container {
     margin: 0 auto;
@@ -374,7 +316,13 @@ body {
     text-transform: initial;
 }
 
-=======
+/* PREFERENCES PAGE */
+
+.pref-container {
+    padding: 20px;
+}
+
+/*=======*/
 /* MODAL */
 
 .modal-container {
