@@ -1,17 +1,11 @@
 //  =========================            
 
 
-        document.addEventListener('init', function(event) {
-              var page = event.target;
+        function pushButton() {
 
-              if (page.id === 'pref-template') {
-                document.querySelector('#push-button').onclick = function() {
                   document.querySelector('#myNavigator').pushPage('template-signup');
-                };
-              } else if (page.id === 'template-signup') {
-                alert('you are here already.')
-              }
-            });
+              
+            };
 
 
 
