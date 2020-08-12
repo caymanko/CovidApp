@@ -1,77 +1,75 @@
-//  =========================
+//  =========================            
 
-function pushButton() {
-  document.querySelector("#myNavigator").pushPage("sign-up");
-}
 
-var login = function() {
-  // var fullname = document.getElementById('fullname').value;
-  // var location = document.getElementById('location').value;
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
+        function pushButton() {
 
-  if (username === "bob" && password === "secret") {
-    ons.notification.alert("Congratulations!");
-    document.querySelector("#myNavigator").pushPage("tabbar-template");
-  } else {
-    ons.notification.alert("Incorrect username or password.");
-  }
-};
+                  document.querySelector('#myNavigator').pushPage('tabbar-template');
+              
+            };
+
+
 
 // ========================= FORM SUBMISSION =========================
 
-//  SUBMIT
 
-function toggleSubmit(target) {
-  // currently the submit is only checking for the terms
-  // but you'd also want to check for other required field elements
-  document.querySelector("#submitBtn").disabled = !target.checked;
-}
+            //  SUBMIT
 
-function submitBooking() {
-  var page = document.getElementById("page-single");
+            function toggleSubmit(target){
 
-  // first get the spinner modal and show it
-  var spinnerModal = document.querySelector("#spinner-modal");
-  spinnerModal.show();
+                // currently the submit is only checking for the terms
+                // but you'd also want to check for other required field elements
+                document.querySelector('#submitBtn').disabled = !target.checked;
+            }
 
-  // then build the object (just partially shown here)
-  var bookingData = {
-    guestName: page.querySelector("#fullName").value,
+            function submitBooking(){
 
-    arrDate: new Date(page.querySelector("#arrDate").value),
-  };
+                var page = document.getElementById('page-single');
 
-  // SPINNER SIMULATES DATA TO END POINT
-  setTimeout(function() {
-    spinnerModal.hide();
+                // first get the spinner modal and show it
+                var spinnerModal = document.querySelector('#spinner-modal');                
+                spinnerModal.show();
 
-    // get the reply dialog
-    var bookingDialog = document.getElementById("booking-dialog");
+                // then build the object (just partially shown here)
+                var bookingData = {
 
-    // we have to create it and append it to the dom
-    ons
-      .createElement("booking-confirm-template", { append: true })
-      .then(function(bookingDialog) {
-        // set the display data
+                    guestName: page.querySelector('#fullName').value,
+                    
+                    arrDate: new Date(page.querySelector('#arrDate').value),
+                    
+                }
 
-        bookingDialog.querySelector("#confirm-date").innerHTML =
-          '<span class="dialog-em">' +
-          bookingData.arrDate.toDateString() +
-          "</span>";
+                // SPINNER SIMULATES DATA TO END POINT
+                setTimeout(function() {
+                    spinnerModal.hide();
 
-        bookingDialog.querySelector("#fullName").innerHTML =
-          '<span class="dialog-em">' + bookingData.guestName + "</span>";
+                    // get the reply dialog
+                    var bookingDialog = document.getElementById('booking-dialog');
 
-        bookingDialog.show();
-      });
-  }, 1000);
-}
+                    // we have to create it and append it to the dom                
+                    ons.createElement('booking-confirm-template', { append: true })
+                        .then(function(bookingDialog) {
+                            // set the display data
 
-// fired from the booking-dialog
-function navToMain() {
-  // right now the booking page is on the detail which is on the list
-  // so we want to pop off the 2 pages to go back to the list
-  document.querySelector("#myNavigator").popPage({ times: 2 });
-  document.getElementById("booking-dialog").hide();
-}
+                            
+                            bookingDialog.querySelector('#confirm-date').innerHTML = '<span class="dialog-em">' + bookingData.arrDate.toDateString() + '</span>';
+
+                            bookingDialog.querySelector('#fullName').innerHTML = '<span class="dialog-em">' + bookingData.guestName + '</span>';
+                            
+
+                            bookingDialog.show();
+                        });
+                    
+                }, 1000);                
+                
+            }
+
+            // fired from the booking-dialog
+            function navToMain(){
+
+                // right now the booking page is on the detail which is on the list
+                // so we want to pop off the 2 pages to go back to the list                
+                document.querySelector('#myNavigator').popPage({times: 2});
+                document.getElementById('booking-dialog').hide();
+
+            }
+
