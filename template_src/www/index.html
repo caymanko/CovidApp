@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="./lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="./lib/onsenui/css/onsen-css-components.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
     <script src="./lib/onsenui/js/onsenui.min.js"></script>
@@ -24,10 +25,10 @@
 
 <body>
 
-<ons-navigator id="myNavigator" page="first"> </ons-navigator> 
+    <ons-navigator id="myNavigator" page="first"> </ons-navigator>
 
 
-<template id="first">
+    <template id="first">
         <ons-page id="first">
 
             <ons-button class="button" id="push-button" onclick="pushButton()"> Sign Up </ons-button>
@@ -35,16 +36,16 @@
 </ons-page>
 </template>
 
-<template id="tabbar-template">
+    <template id="tabbar-template">
         <ons-page id="tabbar-page">
     <ons-tabbar swipeable position="bottom">
-        <ons-tab page="first-template" label="Home" icon="md-home" active>
+        <ons-tab  page="first-template" label="Home" icon="fa-clinic-medical" active>
         </ons-tab>
-        <ons-tab page="prevention-template" label="Prevention" icon="md-face">
+        <ons-tab page="prevention-template" label="Prevention" icon="fa-user-md">
         </ons-tab>
-        <ons-tab page="list-template" label="List" icon="md-book">
+        <ons-tab page="list-template" label="List" icon="fa-list">
         </ons-tab>
-        <ons-tab page="pref-template" label="Preferences" icon="md-settings">
+        <ons-tab page="pref-template" label="Preferences" icon="fa-cog">
         </ons-tab>
     </ons-tabbar>
 </ons-page>
@@ -226,7 +227,7 @@
 
     <!-- PREFERENCES  -->
 
-          
+
 
     <template id="pref-template">
         <ons-page id="pref-page">
@@ -252,7 +253,7 @@
 
     <!-- SIGNUP PAGE -->
 
-        <template id="template-signup">
+    <template id="template-signup">
             <ons-page id="page-signup">
                 <ons-toolbar>
                     <div class="left"><ons-back-button>Back</ons-back-button></div>
@@ -304,9 +305,9 @@
             </ons-page>
         </template>
 
-         <!-- ===================== Dialog Confirmation ===================== -->
-        
-        <template id="booking-confirm-template">
+    <!-- ===================== Dialog Confirmation ===================== -->
+
+    <template id="booking-confirm-template">
             <ons-dialog id="booking-dialog">
               <div style="text-align: center; padding: 10px;">
                 <h3>
@@ -364,15 +365,15 @@
         </div>
     </ons-modal>
 
-        
 
-        
-           <!-- SPINNER FOR FORM ENTRY -->        
-        <ons-modal id="spinner-modal">
-            <div style="margin: auto;">
-                <ons-icon icon="md-spinner" size="70px" spin></ons-icon>              
-            </div>
-        </ons-modal>
+
+
+    <!-- SPINNER FOR FORM ENTRY -->
+    <ons-modal id="spinner-modal">
+        <div style="margin: auto;">
+            <ons-icon icon="md-spinner" size="70px" spin></ons-icon>
+        </div>
+    </ons-modal>
 
     <script type="text/javascript" src="js/signup.js"></script>
     <script type="text/javascript" src="js/listModal.js"></script>

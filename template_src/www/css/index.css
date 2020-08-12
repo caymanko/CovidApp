@@ -41,7 +41,6 @@ body {
     width: 100%;
 }
 
-
 h1 {
     font-size: 24px;
     font-weight: normal;
@@ -51,10 +50,8 @@ h1 {
     text-align: center;
 }
 
-
 ons-button.button {
     background: linear-gradient(45deg, rgba(255, 116, 75, 1) -10%, rgba(255, 45, 106, 1) 70%);
-
 }
 
 
@@ -90,7 +87,6 @@ tr.h2 {
 .covid-svg {
     width: 80%;
 }
-
 
 .container {
     margin: 0 auto;
@@ -316,13 +312,17 @@ tr.h2 {
     text-transform: initial;
 }
 
+
 /* PREFERENCES PAGE */
 
 .pref-container {
     padding: 20px;
 }
 
+
 /*=======*/
+
+
 /* MODAL */
 
 .modal-container {
