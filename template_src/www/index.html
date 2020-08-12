@@ -29,11 +29,108 @@
 
 <template id="first">
         <ons-page id="first">
-
-            <ons-button class="button" id="push-button" onclick="pushButton()"> Sign Up </ons-button>
+             <img id="IllustrationSVG" class="center" src="./img/SVG/Undraw_Find.svg">
+                    <div class="onboardText">
+                        <h1> Welcome </h1>
+                        <h3> <span class="headingH3"> Choose from your city’s largest used bike catalogue </span></h3>
+                        <ons-button class="button" id="push-button" onclick="pushButton()">Continue</ons-button></ons-button>
+                    </div>
+           
 
 </ons-page>
 </template>
+
+<template id="second">
+        <ons-page id="second">
+
+            <ons-button class="button" id="push-button" onclick="pushButton2()">Continue</ons-button>
+
+</ons-page>
+</template>
+
+<template id="third">
+        <ons-page id="third">
+
+            <ons-button class="button" id="push-button" onclick="pushButton3()">Continue</ons-button>
+
+</ons-page>
+</template>
+
+   <!-- SIGNUP PAGE -->
+
+        <template id="template-signup">
+            <ons-page id="page-signup">
+                <ons-toolbar>
+                    <div class="left"><ons-back-button>Back</ons-back-button></div>
+                    <div class="center"></div>
+                </ons-toolbar>
+                 <ons-card>
+                    <div class="apply-header">   
+                        Create an account     
+                    </div>                    
+                    <div class="content">
+                        <h3 class="section-break">Your Details</h3>
+
+                        <div>
+                            <!-- notice we use input-id here and not id, this is for the form field association -->
+                            <label for="fullName">Full Name</label>
+                            <div><ons-input input-id="fullName" class="form-field-full" modifier="underbar" placeholder="full name"></ons-input></div>
+                        </div>
+
+                        <div>
+                            <label for="email">Email Address</label>
+                            <div><ons-input input-id="email" class="form-field-full" modifier="underbar" placeholder="email"></ons-input></div>
+                        </div>
+
+                        <h3 class="section-break">Date Available</h3>
+
+                        <div>
+                           
+                            <label for="arrDate">Please select a date to complete the odd job.</label>
+                            <div><ons-input input-id="arrDate" type="date" class="form-field-full" modifier="underbar" placeholder="select a date"></ons-input></div>
+                        </div>
+                       
+                                    <!-- SUBMIT -->
+
+                         <ons-checkbox input-id="agreeTerms" onchange="toggleSubmit(this)"></ons-checkbox>
+                        <label for="agreeTerms" class="center">
+                            I agree to the terms of service
+                        </label>
+                    
+                        <div style="text-align: center">
+                        <ons-button class="btn-primary " id="submitBtn" disabled onclick="submitBooking()">
+                            Submit
+                        </ons-button>
+
+                         <ons-button class="button" id="push-button" onclick="pushButton3()">Continue</ons-button>
+
+                    </div>
+                        
+                    </div>
+                </ons-card>
+
+
+            </ons-page>
+        </template>
+
+         <!-- ===================== Dialog Confirmation ===================== -->
+        
+        <template id="booking-confirm-template">
+            <ons-dialog id="booking-dialog">
+              <div style="text-align: center; padding: 10px;">
+                <h3>
+                  Thank you, <span id="fullName"></span>!
+                </h3>
+
+                <p>
+                    Your application for <span id="confirm-date"></span> has been recieved and will be forwarded to the original poster.
+                </p>
+
+                  <ons-button class="btn-primary" onclick="navToMain()">Close</ons-button>
+                </p>
+              </div>
+            </ons-dialog>
+        </template>
 
 <template id="tabbar-template">
         <ons-page id="tabbar-page">
@@ -250,78 +347,7 @@
         </ons-page>
     </template>
 
-    <!-- SIGNUP PAGE -->
-
-        <template id="template-signup">
-            <ons-page id="page-signup">
-                <ons-toolbar>
-                    <div class="left"><ons-back-button>Back</ons-back-button></div>
-                    <div class="center"></div>
-                </ons-toolbar>
-                 <ons-card>
-                    <div class="apply-header">   
-                        Create an account     
-                    </div>                    
-                    <div class="content">
-                        <h3 class="section-break">Your Details</h3>
-
-                        <div>
-                            <!-- notice we use input-id here and not id, this is for the form field association -->
-                            <label for="fullName">Full Name</label>
-                            <div><ons-input input-id="fullName" class="form-field-full" modifier="underbar" placeholder="full name"></ons-input></div>
-                        </div>
-
-                        <div>
-                            <label for="email">Email Address</label>
-                            <div><ons-input input-id="email" class="form-field-full" modifier="underbar" placeholder="email"></ons-input></div>
-                        </div>
-
-                        <h3 class="section-break">Date Available</h3>
-
-                        <div>
-                           
-                            <label for="arrDate">Please select a date to complete the odd job.</label>
-                            <div><ons-input input-id="arrDate" type="date" class="form-field-full" modifier="underbar" placeholder="select a date"></ons-input></div>
-                        </div>
-                       
-                                    <!-- SUBMIT -->
-
-                         <ons-checkbox input-id="agreeTerms" onchange="toggleSubmit(this)"></ons-checkbox>
-                        <label for="agreeTerms" class="center">
-                            I agree to the terms of service
-                        </label>
-                    
-                        <div style="text-align: center">
-                        <ons-button class="btn-primary " id="submitBtn" disabled onclick="submitBooking()">
-                            Submit
-                        </ons-button>
-                    </div>
-                        
-                    </div>
-                </ons-card>
-
-
-            </ons-page>
-        </template>
-
-         <!-- ===================== Dialog Confirmation ===================== -->
-        
-        <template id="booking-confirm-template">
-            <ons-dialog id="booking-dialog">
-              <div style="text-align: center; padding: 10px;">
-                <h3>
-                  Thank you, <span id="fullName"></span>!
-                </h3>
-
-                <p>
-                    Your application for <span id="confirm-date"></span> has been recieved and will be forwarded to the original poster.
-                </p>
-
-                  <ons-button class="btn-primary" onclick="navToMain()">Close</ons-button>
-                </p>
-              </div>
-            </ons-dialog>
-        </template>
+ 
 
     <template id="list-template">
 

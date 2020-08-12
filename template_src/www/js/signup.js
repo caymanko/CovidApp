@@ -2,10 +2,21 @@
 
 
         function pushButton() {
-
-                  document.querySelector('#myNavigator').pushPage('tabbar-template');
-              
+                  document.querySelector('#myNavigator').pushPage('second');             
             };
+
+        function pushButton2() {
+                  document.querySelector('#myNavigator').pushPage('third');             
+            };
+
+        function pushButton3() {
+                  document.querySelector('#myNavigator').pushPage('template-signup');             
+            };
+
+        function pushButtonDash() {
+                  document.querySelector('#myNavigator').pushPage('tabbar-template');             
+            };
+
 
 
 
