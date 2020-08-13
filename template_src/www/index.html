@@ -40,7 +40,7 @@
            </ons-page>
 </template>
 
-<template id="second">
+    <template id="second">
         <ons-page id="second">
             <div class="onboard-container">
                 
@@ -52,7 +52,7 @@
 </ons-page>
 </template>
 
-<template id="third">
+    <template id="third">
         <ons-page id="third">
                     <div class="onboard-container">
                          <img class="onboard-svg " src="img/world.svg">
@@ -65,9 +65,9 @@
 </template>
 
 
-   <!-- SIGNUP PAGE -->
+    <!-- SIGNUP PAGE -->
 
-        <template id="template-signup">
+    <template id="template-signup">
             <ons-page id="page-signup">
                 <ons-toolbar>
                     <div class="left"><ons-back-button>Back</ons-back-button></div>
@@ -121,9 +121,9 @@
             </ons-page>
         </template>
 
-         <!-- ===================== Dialog Confirmation ===================== -->
-        
-        <template id="booking-confirm-template" class="dialogue-card">
+    <!-- ===================== Dialog Confirmation ===================== -->
+
+    <template id="booking-confirm-template" class="dialogue-card">
             <ons-dialog id="booking-dialog" >
               <div style="text-align: center; padding: 10px;">
                 <h3>
@@ -141,14 +141,14 @@
         </template>
 
 
-           <!-- SPINNER FOR FORM ENTRY -->        
-        <ons-modal id="spinner-modal">
-            <div style="margin: auto;">
-                <ons-icon icon="md-spinner" size="70px" spin></ons-icon>              
-            </div>
-        </ons-modal>
+    <!-- SPINNER FOR FORM ENTRY -->
+    <ons-modal id="spinner-modal">
+        <div style="margin: auto;">
+            <ons-icon icon="md-spinner" size="70px" spin></ons-icon>
+        </div>
+    </ons-modal>
 
-<template id="tabbar-template">
+    <template id="tabbar-template">
 
         <ons-page id="tabbar-page">
     <ons-tabbar swipeable position="bottom">
@@ -197,7 +197,7 @@
                 
                 
                             <div class="todosec1 todo--finished">
-                                <i class="fas fa-user-friends" style="color:#892DFE; font-size: 20px;"></i>
+                                <i class="fas fa-user-friends" style="color:#C62DFA; font-size: 20px;"></i>
                                 <p class="todo__link">Total Cases</p>
                                 <h2 class="todo__amount content" id="home-totalConfirmed">0</h2>
                                 
@@ -211,7 +211,7 @@
                             </div>
 
                             <div class="todosec1 todo--finished">
-                                <i class="fas fa-ambulance" style="color:#3D85FE; font-size: 20px;"></i>
+                                <i class="fas fa-ambulance" style="color:#2F92FA; font-size: 20px;"></i>
                                 <p class="todo__link">New Deaths</p>
                                 <h2 class="todo__amount" id="home-newDeaths">0</h2>
                                 
@@ -346,18 +346,20 @@
         <ons-page id="pref-page">
                 
             <div class="content content-container pref-container">
-                <h1>Preferences</h1>
-
+                
+                <div span id="titletext" style="margin-left: -20px;">Preferences</div>
+                <img src="img/undraw.svg" style="width: 275px;  display: block; margin-left: auto; margin-right: auto; width: 90%; padding: 90px 0;" alt="">
+                <div class="btn-space">
                 <div class="form-group">
-                    <label for="country">Type a Country</label>
-                    <div><ons-input input-id="country" class="form-field-full" placeholder="Enter country name" modifier="underbar" id="desiredCountry"></ons-input></div>
+                    <!-- <label for="country">Type a Country</label> -->
+                    <div><ons-input  input-id="country" class="form-field-full pref-input" placeholder="Enter Country Name" modifier="underbar" id="desiredCountry"></ons-input></div>
                 </div>
 
                 
 
-                <div class="btn-space">
-                    <ons-button class="btn-link" onclick="savePref()">UPDATE</ons-button>
-                    <ons-button class="btn-link" onclick="clearPref()">CLEAR</ons-button>
+                
+                    <ons-button class="btn-link1" onclick="savePref()">Update</ons-button>
+                    <ons-button class="btn-link2" onclick="clearPref()">Clear</ons-button>
                 </div>
             </div>
 

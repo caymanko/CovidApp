@@ -3749,6 +3749,7 @@ h6 {
 }
 
 .text-input--underbar {
+    background: red;
     box-sizing: border-box;
     background-clip: padding-box;
     padding: 0;
@@ -3760,26 +3761,30 @@ h6 {
     vertical-align: top;
     outline: 0;
     line-height: 1;
-    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-transform: initial;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
     border: none;
-    background-color: transparent;
+    background-color: red;
     letter-spacing: 0;
     box-shadow: none;
     color: #fff;
     padding: 0;
     margin: 0;
     width: auto;
-    font-size: 16px;
     height: 31px;
     font-weight: 400;
     box-sizing: border-box;
     border: none;
-    background-color: transparent;
-    border-bottom: 1px solid rgba(47, 45, 45, 1);
-    border-radius: 0
+    background-color: #24323F;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-right: 46px;
 }
 
 .text-input--underbar:disabled {
@@ -3788,13 +3793,13 @@ h6 {
     pointer-events: none;
     border: none;
     background-color: transparent;
-    border-bottom: 1px solid rgba(47, 45, 45, 1)
+    border-bottom: 1px solid rgba(255, 255, 255, 1)
 }
 
 .text-input--underbar:disabled::-webkit-input-placeholder {
     border: none;
     background-color: transparent;
-    color: #999;
+    color: #fff;
     border: none;
     background-color: transparent
 }
@@ -3802,7 +3807,7 @@ h6 {
 .text-input--underbar:disabled:-ms-input-placeholder {
     border: none;
     background-color: transparent;
-    color: #999;
+    color: #fff;
     border: none;
     background-color: transparent
 }
@@ -3810,7 +3815,7 @@ h6 {
 .text-input--underbar:disabled::-ms-input-placeholder {
     border: none;
     background-color: transparent;
-    color: #999;
+    color: #fff;
     border: none;
     background-color: transparent
 }
@@ -3818,7 +3823,7 @@ h6 {
 .text-input--underbar:disabled::placeholder {
     border: none;
     background-color: transparent;
-    color: #999;
+    color: #fff;
     border: none;
     background-color: transparent
 }
@@ -3829,7 +3834,7 @@ h6 {
     color: #fff;
     border: none;
     background-color: transparent;
-    border-bottom: 1px solid rgba(47, 45, 45, 1)
+    border-bottom: 1px solid rgba(255, 255, 255, 1)
 }
 
 .text-input--material {
